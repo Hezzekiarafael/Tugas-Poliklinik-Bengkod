@@ -136,6 +136,18 @@
                 Jadwal Periksa 
             </a>
 
+            <a href="{{ route('periksa-pasien.index') }}"
+                class="{{ $baseLink }} {{ request()->routeIs('periksa-pasien.*') ? $active : $inactive }}">
+                <i class="fas fa-hospital w-4 text-center"></i>
+                Periksa Pasien
+            </a>
+
+              <a href="{{ route('riwayat-pasien.index') }}"
+                class="{{ $baseLink }} {{ request()->routeIs('riwayat-pasien.*') ? $active : $inactive }}">
+                <i class="fas fa-hospital w-4 text-center"></i>
+                Riwayat Pasien
+            </a>
+
 
         </div>
         @endif

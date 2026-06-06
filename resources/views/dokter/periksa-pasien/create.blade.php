@@ -12,6 +12,14 @@
         </h2>
     </div>
 
+    @if(session('error'))
+    <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50" role="alert">
+        <span class="font-medium">Error!</span> {{ session('error') }}
+    </div>
+    @endif
+
+
+
     {{-- Card --}}
     <div class="card bg-base-100 shadow-sm rounded-2xl border border-slate-200">
         <div class="card-body p-8">

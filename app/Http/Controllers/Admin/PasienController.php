@@ -11,7 +11,7 @@ class PasienController extends Controller
 {
     public function index()
     {
-        $pasiens = User::where('role', 'pasien')->with('poli')->get();
+        $pasiens = User::query()->where('role', 'pasien')->with('poli')->get();
         return view('admin.pasien.index', compact('pasiens'));
     }
 

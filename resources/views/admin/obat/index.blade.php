@@ -28,6 +28,7 @@
                             <th class="px-6 py-4">Nama Obat</th>
                             <th class="px-6 py-4">Kemasan</th>
                             <th class="px-6 py-4">Harga</th>
+                            <th class="px-6 py-4">Stok</th>
                             <th class="px-6 py-4 text-right">Aksi</th>
                         </tr>
                     </thead>
@@ -52,6 +53,20 @@
                                 Rp {{ number_format($obat->harga, 0, ',', '.') }}
                             </td>
 
+                            <td class="px-6 py-4">
+                                <div class="flex flex-col items-start gap-1">
+                                    <span class="font-semibold text-slate-800">{{ $obat->stok }}</span>
+                                    
+                                    {{-- Indikator Stok (Nilai Plus UAS) --}}
+                                    @if($obat->stok <= 0)
+                                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-red-100 text-red-600">Habis</span>
+                                    @elseif($obat->stok <= 5)
+                                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-orange-100 text-orange-600">Stok Menipis</span>
+                                    @else
+                                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-green-100 text-green-600">Aman</span>
+                                    @endif
+                                </div>
+                            </td>
                             <td class="px-6 py-4 text-right">
                                 <div class="flex justify-end gap-2">
 
